@@ -17,22 +17,19 @@ def is_valid_password(password):
         main()
     # The password must be at least 8 char long
     length = len(password)
-    if length != 8:
+    if length <= 8:
         print ("That password didn't have the required properties. # password length")
         main()
-    # The password must have one lower case
-    if password.islower is True:
-        print ("That password didn't have the required properties. # No lower case letter")
-        main()
     # The password must have one upper case
-    if password.isupper is True:
-        print("That password didn't have the required properties. # No upper case letter")
+    elif password.islower is False:
+        print ("That password didn't have the required properties. # No upper case letter")
         main()
     #The password must have one digit
-    if password.isalpha is True:
-        print("that password didn't have the required properties.   # No digit")
+    elif password.isalpha is True:
+        print("That password didn't have the required properties.   # No digit")
         main()
-
+    else:
+        print("That pair of passwords will work")
 
 def main():
     """
